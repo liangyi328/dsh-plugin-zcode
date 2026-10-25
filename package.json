@@ -1,0 +1,32 @@
+{
+    "name":  "dsh-plugin-zcode",
+    "version":  "0.1.0",
+    "description":  "ZCode Start Plan (GLM-5.3 / GLM-5.3-Flash) model provider for DeepSeek Harness, using the ZCode client\u0027s own on-disk credential",
+    "type":  "module",
+    "main":  "lib/index.js",
+    "exports":  {
+                    ".":  "./lib/index.js",
+                    "./cordis.patch.yml":  "./cordis.patch.yml",
+                    "./package.json":  "./package.json"
+                },
+    "files":  [
+                  "lib",
+                  "cordis.patch.yml",
+                  "README.md"
+              ],
+    "license":  "MIT",
+    "dsh":  {
+                "engines":  {
+                                "dsh":  "\u003e=0.2.0-rc.2"
+                            },
+                "bundle":  {
+                               "patch":  "./cordis.patch.yml"
+                           }
+            },
+    "peerDependencies":  {
+                             "@deepseek-ai/dsh":  "\u003e=0.2.0-rc.2"
+                         },
+    "dependencies":  {
+                         "@deepseek-ai/schemastery":  "3.18.4"
+                     }
+}
