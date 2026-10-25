@@ -1,0 +1,14 @@
+# Dependencies are installed by the host profile; never commit them.
+node_modules/
+
+# Local diagnostics and scratch tests.
+*.log
+test-*.mjs
+probe-*.mjs
+zcode-plugin.log
+
+# Editor and OS noise.
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
