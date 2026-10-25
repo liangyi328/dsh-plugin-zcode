@@ -1,0 +1,22 @@
+# dsh-plugin-zcode bundle patch.
+#
+# The row id (`llm-zcode`) is the settings namespace the Models page uses for
+# this provider, so it must stay stable.
+#
+# The row name is the package's own npm name: the loader resolves it from the
+# installed package (profile node_modules), exactly like every official bundle
+# row. No file:/// URLs and no absolute paths, so the package installs as-is
+# from GitHub or npm on any machine.
+- insert:
+    - id: llm-zcode
+      name: dsh-plugin-zcode
+      config:
+        displayName: ZCode (GLM Start Plan)
+        # Credentials are discovered automatically: the plugin decrypts the
+        # ZCode client's own on-disk credential and picks the newest file, so a
+        # stale install cannot shadow the current session. Set
+        # `credentialsPath` only for an unusual layout.
+        #
+        # Diagnostics are opt-in: set `debugLogPath` (an id-targeted config
+        # override in the profile patch is the usual way) to make the plugin
+        # append a breadcrumb trail to that file. Unset = silent.
